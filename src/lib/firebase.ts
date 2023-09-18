@@ -21,7 +21,7 @@ export const db = getFirestore(app);
 export const auth = getAuth(app);
 export const storage = getStorage(app);
 
-const user = userStore(auth);
+export const user = userStore(auth);
 
 interface UserData {
   username: string;
