@@ -23,7 +23,9 @@
       <p class="text-xl my-8">{data.bio ?? "no bio yet..."}</p>
       <ul class="list-none">
         {#each data.links as item}
-          <UserLink {...item}   />
+          <li class="my-4">
+            <UserLink {...item} />
+          </li>
         {/each}
       </ul>
     </div>
