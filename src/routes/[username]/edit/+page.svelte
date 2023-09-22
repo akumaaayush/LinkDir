@@ -73,8 +73,8 @@
   console.log($userData?.links);
 </script>
 
-<AuthCheck>
-  <main class="max-w-xl mx-auto mt-5 flex flex-col items-center space-y-4">
+<main class="max-w-xl mx-auto mt-5 flex flex-col items-center space-y-4">
+  <AuthCheck>
     {#if $userData?.username == $page.params.username}
       <h1 class="mx-2 text-2xl font-bold mt-8 mb-4">Edit your Profile</h1>
       <h2 class="text-2xl text-purple-500">
@@ -179,5 +179,5 @@
         </button>
       {/if}
     {/if}
-  </main>
-</AuthCheck>
+  </AuthCheck>
+</main>
