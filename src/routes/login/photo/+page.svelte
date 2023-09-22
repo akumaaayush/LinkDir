@@ -13,7 +13,7 @@
   async function upload(e: any) {
     uploading = true;
     const file = e.target.files[0];
-    const previewURL = URL.createObjectURL(file);
+    previewURL = URL.createObjectURL(file);
     const storageRef = ref(storage, `users/${$user!.uid}/profile.png`);
     const result = await uploadBytes(storageRef, file);
     const url = await getDownloadURL(result.ref);
@@ -32,6 +32,7 @@
         alt="photoURL"
         width="256"
         height="256"
+        referrerpolicy="no-referrer"
         class="mx-auto"
       />
       <label for="photoURL" class="label mt-4">
