@@ -1,26 +1,40 @@
 import type { PageServerLoad } from "./$types";
-import { adminAuth, adminDB } from "$lib/server/admin";
+import { adminDB } from "$lib/server/admin";
 import { error, redirect } from "@sveltejs/kit";
 
-export const load = (async ({ cookies }) => {
-  const sessionCookie = cookies.get("__session");
+export const load = (async ({ locals, params }) => {
+  const uid = locals.userId;
 
-  try {
-    const decodedClaims = await adminAuth.verifySessionCookie(
-      sessionCookie as string,
-      true
-    );
-    const userDoc = await adminDB
-      .collection("users")
-      .doc(decodedClaims.uid)
-      .get();
-    const userData = userDoc.data();
-    return {
-      bio: userData?.bio,
-    };
-  } catch (e) {
-    console.log(e);
-    redirect(301, "/login ");
-    throw error(401, "Unauthorized Request!");
+  if (!uid) {
+    throw redirect(301, "/login");
   }
+
+  const userDoc = await adminDB.collection("users").doc(uid!).get();
+  const { username, bio } = userDoc.data()!;
+
+  if (params.username !== username) {
+    throw error(401, "That username does not belong to you");
+  }
+  return {
+    bio,
+  };
 }) satisfies PageServerLoad;
+
+export const actions = {
+  default: async ({ locals, params, request }) => {
+    const uid = locals.userId;
+
+    const data = await request.formData();
+    const bio = data.get("bio");
+
+    const userRef = adminDB.collection("users").doc(uid!);
+    const userDoc = await userRef.get();
+    const { username } = userDoc.data()!;
+
+    if (params.username !== username) {
+      throw error(401, "That username does not belong to you");
+    }
+
+    await userRef.update({ bio });
+  },
+};
