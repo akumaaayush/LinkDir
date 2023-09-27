@@ -7,7 +7,6 @@
 
 <svelte:head>
   <title>@{data.username}</title>
-  <meta name="description" content={data.bio} />
 </svelte:head>
 
 <h1 class="text-7xl text-purple-500 mx-auto">@{data.username}</h1>

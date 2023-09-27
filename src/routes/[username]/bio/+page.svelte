@@ -7,7 +7,6 @@
 
 <svelte:head>
   <title>Edit Bio</title>
-  <meta name="description" content={data.bio} />
 </svelte:head>
 
 <main class=" mx-auto max-w-sm mt-5 space-y-4 prose">
