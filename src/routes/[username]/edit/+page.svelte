@@ -87,6 +87,12 @@
           >Change Photo</a
         >
       </div>
+      <div>
+        <a
+          href={`/${$userData.username}/bio`}
+          class="btn btn-outline btn-success">Change Bio</a
+        >
+      </div>
       <form class="form-control">
         <label class="label cursor-pointer flex items-start justify-center">
           <span class="label-text mr-6">
