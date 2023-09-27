@@ -70,7 +70,7 @@
     formData.set(formDefaults);
     showForm = false;
   }
-  console.log($userData?.links);
+  // console.log($userData?.links);
 </script>
 
 <svelte:head>

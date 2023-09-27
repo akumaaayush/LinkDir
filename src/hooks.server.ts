@@ -8,7 +8,7 @@ export const handle = (async ({ event, resolve }) => {
     const decodedClaims = await adminAuth.verifySessionCookie(
       sessionCookie as string
     );
-    console.log("found user id: ", decodedClaims.uid);
+    // console.log("found user id: ", decodedClaims.uid);
     event.locals.userId = decodedClaims.uid;
   } catch (e) {
     event.locals.userId = null;

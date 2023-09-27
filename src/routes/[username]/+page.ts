@@ -14,7 +14,7 @@ export const load = (async ({ params }) => {
   const snapshot = await getDocs(q);
   const exists = snapshot.docs[0]?.exists();
   const data = snapshot.docs[0]?.data();
-  console.log(data);
+  // console.log(data);
 
   if (!exists) {
     throw error(404, "That user does not exist");
