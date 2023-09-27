@@ -5,6 +5,11 @@
   export let data: PageData;
 </script>
 
+<svelte:head>
+  <title>Edit Bio</title>
+  <meta name="description" content={data.bio} />
+</svelte:head>
+
 <main class=" mx-auto max-w-sm mt-5 space-y-4 prose">
   <h1 class="text-3xl text-center font-bold">Edit Bio</h1>
   <p class="text-lg break-words">

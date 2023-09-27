@@ -6,4 +6,8 @@
   }
 </script>
 
+<svelte:head>
+  <title>Redirecting...</title>
+</svelte:head>
+
 <h1>Redirecting...</h1>

@@ -23,6 +23,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Edit Photo</title>
+</svelte:head>
+
 <AuthCheck>
   <h2 class="card-title">Upload a Profile photo</h2>
   <form class="w-full max-w-screen-md">

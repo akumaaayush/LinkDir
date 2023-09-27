@@ -73,6 +73,10 @@
   console.log($userData?.links);
 </script>
 
+<svelte:head>
+  <title>Edit Profile</title>
+</svelte:head>
+
 <main class="max-w-xl mx-auto mt-5 flex flex-col items-center space-y-4">
   <AuthCheck>
     {#if $userData?.username == $page.params.username}

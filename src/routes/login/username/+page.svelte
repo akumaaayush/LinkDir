@@ -54,6 +54,10 @@
   }
 </script>
 
+<svelte:head>
+  <title>Pick a username!</title>
+</svelte:head>
+
 <AuthCheck>
   {#if $user}
     <p class="text-lg">
@@ -61,7 +65,7 @@
         >@{$userData?.username}</span
       >
     </p>
-    <p class="text-sm">(Usernames cannot be changed)</p>
+    <p class="text-sm text-warning">(Usernames cannot be changed)</p>
     <a href="/login/photo" class="btn btn-primary">Upload Profile Image</a>
   {:else}
     <form class="w-2/5" on:submit|preventDefault={confirmUsername}>
