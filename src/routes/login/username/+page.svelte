@@ -59,10 +59,10 @@
 </svelte:head>
 
 <AuthCheck>
-  {#if $user}
+  {#if $userData?.username}
     <p class="text-lg">
       Your username is <span class="text-success font-bold"
-        >@{$userData?.username}</span
+        >@{$userData.username}</span
       >
     </p>
     <p class="text-sm text-warning">(Usernames cannot be changed)</p>
