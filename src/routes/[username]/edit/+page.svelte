@@ -176,7 +176,7 @@
             class="btn btn-success block">Add Link</button
           >
 
-          <button type="button" class="btn btn-xs my-6" on:click={cancelLink}
+          <button type="button" class="btn btn-md my-6" on:click={cancelLink}
             >Cancel</button
           >
         </form>
