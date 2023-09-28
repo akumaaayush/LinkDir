@@ -6,7 +6,7 @@
 
 <a
   href={url}
-  class="stack w-full text-center bg-base-300 flex justify-center items-center p-4 no-underline rounded-lg not-prose
+  class="stack w-full text-center bg-base-300 flex mx-auto justify-center items-center p-4 no-underline rounded-lg not-prose
   "
 >
   <img
