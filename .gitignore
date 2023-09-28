@@ -38,3 +38,5 @@ internal
 
 service-account.json
 vite.config.ts.timestamp*
+
+firebase-debug.log
